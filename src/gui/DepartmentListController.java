@@ -61,7 +61,7 @@ public class DepartmentListController implements Initializable{
 	private void initializeNodes() {
 		
 		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("Id"));
-		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("Name"));
+		tableColumnName.setCellValueFactory(new PropertyValueFactory<>("Name"));
 
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		
@@ -87,6 +87,7 @@ public class DepartmentListController implements Initializable{
 			
 			DepartmentFormController controller = loader.getController();
 			controller.setDepartment(obj);
+			controller.setDepartmentService(new DepartmentService());
 			controller.updateFormData();
 			
 			Stage dialogStage = new Stage();
